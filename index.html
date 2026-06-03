@@ -1,4 +1,6 @@
+
 <!doctype html>
+
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -6,33 +8,112 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <meta
+      name="description"
+      content="画像をASCIIアートへ変換するTypeScript製レンダラー"
+    />
     <title>ASCII Renderer</title>
   </head>
+
   <body>
-    <main>
-      <h1>ASCII Renderer</h1>
+    <main class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">TypeScript × Canvas</p>
 
-      <label>
-        画像を選択
-        <input id="file-input" type="file" accept="image/*" />
-      </label>
+```
+    <h1>
+      ASCII
+      <span>Renderer</span>
+    </h1>
 
-      <label>
-        横幅
+    <p class="hero-description">
+      写真を読み込み、ピクセルの明るさを解析して
+      ASCIIアートへ変換します。
+    </p>
+  </header>
+
+  <section class="control-panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Controls</p>
+        <h2>画像を変換する</h2>
+      </div>
+
+      <span class="status-badge">Local Processing</span>
+    </div>
+
+    <div class="upload-area">
+      <label class="upload-button">
+        <span class="upload-icon">＋</span>
+
+        <span>
+          <strong>画像を選択</strong>
+          <small>PNG、JPEG、WEBP に対応</small>
+        </span>
+
         <input
-          id="width-input"
-          type="range"
-          min="20"
-          max="180"
-          value="100"
+          id="file-input"
+          type="file"
+          accept="image/*"
         />
-        <span id="width-value">100</span>
       </label>
+    </div>
 
+    <div class="range-control">
+      <div class="range-header">
+        <label for="width-input">
+          ASCII の横幅
+        </label>
+
+        <output id="width-value">100</output>
+      </div>
+
+      <input
+        id="width-input"
+        type="range"
+        min="20"
+        max="180"
+        value="100"
+      />
+
+      <div class="range-scale">
+        <span>Simple</span>
+        <span>Detailed</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="output-panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-label">Preview</p>
+        <h2>ASCII Output</h2>
+      </div>
+
+      <span class="preview-hint">
+        画像はブラウザ内で処理されます
+      </span>
+    </div>
+
+    <div class="ascii-frame">
       <canvas id="canvas"></canvas>
-      <pre id="output">画像を選択してください。</pre>
-    </main>
 
-    <script type="module" src="/src/main.ts"></script>
+      <pre id="output">画像を選択してください。</pre>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Built with TypeScript, Canvas API and Docker.
+    </p>
+  </footer>
+</main>
+
+<script
+  type="module"
+  src="/src/main.ts"
+></script>
+```
+
   </body>
 </html>

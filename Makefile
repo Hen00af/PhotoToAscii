@@ -3,4 +3,4 @@ up:
 down:
 	docker compose down --volumes --remove-orphans
 
-.Phony up down
+.PHONY up down

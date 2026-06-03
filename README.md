@@ -3,4 +3,5 @@
 こんな感じで、アップロードしたものをasciiにしてくれるものです。
 参考URL通りに作りました。
 
+＊デプロイはしていません。Dockerが立ち上がる環境である必要があります。
 [参考URL] https://alexharri.com/blog/ascii-rendering
